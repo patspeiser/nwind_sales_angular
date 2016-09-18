@@ -24,10 +24,10 @@
 				</ul> 
 			</div>
 
-			<div class='well' ng-controller='CompanyStatusCtrl'>
+			<div ng-class="regions.length >= 4 ? 'alert alert-success' : 'well' " ng-controller='CompanyStatusCtrl'>
 				There are {{ regions.length}} regions.
 			</div>
-			<div class='well' ng-controller='CompanyStatusCtrl'>
+			<div ng-class="salesPeople.length >= 4 ? 'alert alert-success' : 'well' " ng-controller='CompanyStatusCtrl'>
 				There are {{ salesPeople.length }} salesPeople.
 			</div>
 			<ui-view></ui-view>
