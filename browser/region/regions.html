@@ -1,9 +1,18 @@
-<div class='well'>
+<div class='well' ng-controller='RegionListCtrl'>
 
 	<div class='form-group'>
 		<input class='form-control' placeholder='Add Region' ng-model='zipCode'/>
 	</div>
 	<button class='btn btn-primary' ng-click='create()' ng-disabled='!zipCode'>Create Region</button>
+		
+	<div> <br clear='all'/> </div>
+	<ul class='list-group'>
+		<li class='list-group-item' ng-repeat='region in regions'> 
+			{{ region.zipCode }} 
+			<button class='btn btn-danger pull-right' ng-click='destroy(region)'> Delete </button>
+			<br clear='all'/>
+		</li>
+	</ul>
 
 </div>
 

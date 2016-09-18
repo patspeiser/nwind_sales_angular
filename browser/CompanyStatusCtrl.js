@@ -1,5 +1,5 @@
 angular.module('acme-sales')
-	.controller('CompanyStatusCtrl', function($scope, RegionService, SalesPersonService){
+	.controller('CompanyStatusCtrl', function(RegionService, SalesPersonService, $scope){
 		RegionService.findAll()
 			.then(function(regions){
 				$scope.regions = regions;

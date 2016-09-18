@@ -15,12 +15,18 @@ router.post('/', function(req, res, next){
 		zipCode: req.body.zipCode
 	})
 	.then(function(region){
-		res.send('region created ' + region);
+		res.send(region);
 	})
 	.catch(next);
 
 });
 
-router.delete('/', function(req, res, next){
-
+router.delete('/:id', function(req, res, next){
+	Region.destroy({
+		where: { id: req.params.id }
+	})
+	.then(function(regions){
+		res.sendStatus(200)
+	})	
+	.catch(next);
 });

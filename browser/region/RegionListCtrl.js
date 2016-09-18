@@ -11,10 +11,18 @@ angular.module('acme-sales')
 		$scope.create = function(){
 			RegionService.create({ zipCode: $scope.zipCode})
 				.then(function(region){
-					$scope.regions.push(region)
+					$scope.zipCode = '';
 				})
 				.catch(function(err){
 					console.log(err);
-				})
-		}
+				});
+		};
+
+		$scope.destroy = function(region){
+			console.log('destroy!' + region)
+			RegionService.destroy(region)
+				.catch(function(err){
+					console.log(err);
+				});
+		};
 	})

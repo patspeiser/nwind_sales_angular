@@ -11,19 +11,22 @@ router.get('/', function(req, res, next){
 	.catch(next);
 })
 
-router.post('/:name', function(req, res, next){
-	console.log(req.params.name);
+router.post('/', function(req, res, next){
 	SalesPerson.create({
-		where: {
-			name: req.params.name
-		}
+			name: req.body.name
 	})
 	.then(function(salesPerson){
-		res.send('salesPerson created ', + salesPerson )
+		res.send(salesPerson )
 	})
 	.catch(next);
 });
 
-router.delete('/:name', function(req, res, next){
-
+router.delete('/:id', function(req, res, next){
+	SalesPerson.destroy({
+		where: { id: req.params.id }
+	})
+	.then(function(salesPeople){
+		res.sendStatus(200)
+	})	
+	.catch(next);
 });
