@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<link rel='stylesheet' href='bootstrap/dist/css/bootstrap.css'/>
+		<script src='/angular/angular.js'></script>
+		<script src='/angular-ui-router/release/angular-ui-router.js'></script>
+		<script src='/app.js'></script>
+		<script src='/CompanyStatusCtrl.js'></script>
+		<script src='/region/RegionService.js'></script>
+		<script src='/region/RegionListCtrl.js'></script>
+		<script src='/salesPerson/salesPersonService.js'></script>
+		<script src='/salesPerson/salesPersonListCtrl.js'></script>
+	</head>
+	</head>
+	</head>
+	</head>
+	<body ng-app='acme-sales'>
+		<div class='container'> 
+			<h1>Acme Sales Angular</h1> 
+			<div>
+				<ul class='nav nav-tabs'>
+					<li role='presentation' ui-sref-active='active'> <a ui-sref='home'> Home </a> </li>
+					<li role='presentation' ui-sref-active='active'> <a ui-sref='regions'> Regions</a></li>
+					<li role='presentation' ui-sref-active='active'> <a ui-sref='salesPeople'> Sales People</a></li>
+				</ul> 
+			</div>
+
+			<div class='well' ng-controller='CompanyStatusCtrl'>
+				There are {{ regions.length}} regions.
+			</div>
+			<div class='well' ng-controller='CompanyStatusCtrl'>
+				There are {{ salesPeople.length }} salesPeople.
+			</div>
+			<ui-view></ui-view>
+		</div>
+	</body>
+</html>
