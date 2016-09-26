@@ -25,5 +25,5 @@ angular.module('acme-sales')
 					salesPeople.splice(index, 1);
 				});
 			}
-		}
-	})
+		};
+	});

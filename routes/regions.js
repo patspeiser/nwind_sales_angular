@@ -8,7 +8,7 @@ router.get('/', function(req, res, next){
 		res.send(regions);
 	})
 	.catch(next);
-})
+});
 
 router.post('/', function(req, res, next){
 	Region.create({
@@ -18,7 +18,6 @@ router.post('/', function(req, res, next){
 		res.send(region);
 	})
 	.catch(next);
-
 });
 
 router.delete('/:id', function(req, res, next){
@@ -26,7 +25,7 @@ router.delete('/:id', function(req, res, next){
 		where: { id: req.params.id }
 	})
 	.then(function(regions){
-		res.sendStatus(200)
+		res.sendStatus(200);
 	})	
 	.catch(next);
 });

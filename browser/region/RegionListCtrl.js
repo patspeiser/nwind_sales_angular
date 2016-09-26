@@ -9,9 +9,9 @@ angular.module('acme-sales')
 			});
 
 		$scope.create = function(){
-			RegionService.create({ zipCode: $scope.zipCode})
+			RegionService.create($scope.region)
 				.then(function(region){
-					$scope.zipCode = '';
+          $scope.region = null;
 				})
 				.catch(function(err){
 					console.log(err);
@@ -19,10 +19,9 @@ angular.module('acme-sales')
 		};
 
 		$scope.destroy = function(region){
-			console.log('destroy!' + region)
 			RegionService.destroy(region)
 				.catch(function(err){
 					console.log(err);
 				});
 		};
-	})
+	});

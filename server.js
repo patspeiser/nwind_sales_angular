@@ -1,17 +1,17 @@
 const http = require('http');
 const server = http.createServer(require('./app'));
-const _db = require('./db').db;
+const db = require('./db');
 
 const port = process.env.PORT || 3000;
 
 if(process.env.SYNC){
-	_db.sync()
+	db.sync()
 		.then(function(){
-			console.log('synced')
+			console.log('synced');
 		})
 		.catch(function(err){
 			console.log(err);
-		})
+		});
 }
 
 server.listen(port, function(){

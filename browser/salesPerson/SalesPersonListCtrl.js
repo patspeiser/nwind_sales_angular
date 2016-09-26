@@ -9,14 +9,14 @@ angular.module('acme-sales')
 			});
 
 		$scope.create = function(){
-			SalesPersonService.create({ name: $scope.name})
+			SalesPersonService.create($scope.salesPerson)
 				.then(function(salesPerson){
-					$scope.name = '';
+          $scope.salesPerson = null;
 				})
 				.catch(function(err){
 					console.log(err);
-				})
-		}
+				});
+		};
 		
 		$scope.destroy = function(salesPerson){
 			SalesPersonService.destroy(salesPerson)
